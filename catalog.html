@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OLIMPI — პროდუქციის კატალოგი</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+Georgian:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/catalog.css">
+</head>
+<body class="catalog-body">
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header__top">
+      <div class="container header__top-inner">
+        <div class="header__social">
+          <a href="#" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+        <div class="header__contact-bar">
+          <span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +995 XXX XXX XXX
+          </span>
+          <span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            info@olimpi.ge
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="header__main" id="headerMain">
+      <div class="container header__main-inner">
+        <a href="index.html" class="logo">OLIMPI</a>
+        <nav class="nav" id="nav">
+          <a href="index.html" class="nav__link">მთავარი</a>
+          <a href="index.html#products" class="nav__link">პროდუქცია</a>
+          <a href="index.html#about" class="nav__link">ჩვენს შესახებ</a>
+          <a href="index.html#contact" class="nav__link">კონტაქტი</a>
+        </nav>
+        <div class="header__right">
+          <a href="catalog.html" class="catalog-btn catalog-btn--active">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <span>ე-კატალოგი</span>
+          </a>
+          <div class="lang-switch">
+            <button class="lang-switch__btn active">KA</button>
+            <button class="lang-switch__btn">EN</button>
+          </div>
+          <button class="menu-toggle" id="menuToggle" aria-label="მენიუ">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CATALOG BANNER -->
+  <section class="catalog-banner">
+    <div class="container">
+      <p class="section-tag" style="color: var(--accent-light);">გადახედეთ ჩვენს ასორტიმენტს</p>
+      <h1 class="catalog-banner__title">პროდუქციის კატალოგი 2026</h1>
+    </div>
+  </section>
+
+  <!-- CATALOG VIEWER -->
+  <section class="catalog-viewer">
+    <div class="catalog-wrapper" id="catalogWrapper">
+
+      <!-- Toolbar -->
+      <div class="catalog-toolbar">
+        <div class="toolbar-left">
+          <button class="tool-btn" id="btnFirst" title="პირველი გვერდი">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="11 17 6 12 11 7"/><polyline points="18 17 13 12 18 7"/></svg>
+          </button>
+          <button class="tool-btn" id="btnPrev" title="წინა გვერდი">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <span class="page-indicator"><span id="currentPage">1</span> / <span id="totalPages">16</span></span>
+          <button class="tool-btn" id="btnNext" title="შემდეგი გვერდი">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <button class="tool-btn" id="btnLast" title="ბოლო გვერდი">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="13 17 18 12 13 7"/><polyline points="6 17 11 12 6 7"/></svg>
+          </button>
+        </div>
+        <div class="toolbar-right">
+          <button class="tool-btn" id="btnZoomIn" title="გადიდება">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          </button>
+          <button class="tool-btn" id="btnZoomOut" title="დაპატარავება">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          </button>
+          <button class="tool-btn" id="btnFullscreen" title="სრულეკრანიანი">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+          </button>
+          <button class="tool-btn" id="btnDownload" title="PDF ჩამოტვირთვა">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Book container -->
+      <div class="book-scene" id="bookScene">
+        <div id="book">
+
+          <!-- Page 1: Cover -->
+          <div class="page-content">
+            <div class="page-inner cover-front">
+              <div class="cover-accent"></div>
+              <div class="cover-content">
+                <span class="cover-tag">პროდუქციის კატალოგი</span>
+                <h1 class="cover-title">OLIMPI</h1>
+                <div class="cover-line"></div>
+                <p class="cover-sub">დისტრიბუცია და ლოჯისტიკა</p>
+                <p class="cover-year">2026</p>
+              </div>
+              <div class="cover-footer">
+                <span>www.olimpi.ge</span>
+                <span>info@olimpi.ge</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Page 2: TOC -->
+          <div class="page-content">
+            <div class="page-inner page-toc">
+              <h2 class="page-heading">სარჩევი</h2>
+              <div class="toc-list">
+                <a href="#" class="toc-item" data-goto="3">
+                  <span class="toc-name">სასმელები</span>
+                  <span class="toc-dots"></span>
+                  <span class="toc-page">03</span>
+                </a>
+                <a href="#" class="toc-item" data-goto="5">
+                  <span class="toc-name">საკონდიტრო</span>
+                  <span class="toc-dots"></span>
+                  <span class="toc-page">05</span>
+                </a>
+                <a href="#" class="toc-item" data-goto="7">
+                  <span class="toc-name">რძის პროდუქტები</span>
+                  <span class="toc-dots"></span>
+                  <span class="toc-page">07</span>
+                </a>
+                <a href="#" class="toc-item" data-goto="9">
+                  <span class="toc-name">სნეკები და ჩიფსები</span>
+                  <span class="toc-dots"></span>
+                  <span class="toc-page">09</span>
+                </a>
+                <a href="#" class="toc-item" data-goto="11">
+                  <span class="toc-name">გაყინული პროდუქტები</span>
+                  <span class="toc-dots"></span>
+                  <span class="toc-page">11</span>
+                </a>
+                <a href="#" class="toc-item" data-goto="13">
+                  <span class="toc-name">საყოფაცხოვრებო</span>
+                  <span class="toc-dots"></span>
+                  <span class="toc-page">13</span>
+                </a>
+                <a href="#" class="toc-item" data-goto="15">
+                  <span class="toc-name">საკონტაქტო ინფორმაცია</span>
+                  <span class="toc-dots"></span>
+                  <span class="toc-page">15</span>
+                </a>
+              </div>
+              <div class="page-num">02</div>
+            </div>
+          </div>
+
+          <!-- Page 3: Beverages hero -->
+          <div class="page-content">
+            <div class="page-inner page-category">
+              <div class="cat-hero-block" style="background: linear-gradient(135deg, #1a3a5c, #0c1f33);">
+                <div class="cat-hero-img"><img src="img/beverages.jpg" alt="სასმელები"></div>
+                <div class="cat-hero-overlay"></div>
+                <span class="cat-hero-tag">კატეგორია</span>
+                <h2 class="cat-hero-title">სასმელები</h2>
+                <p class="cat-hero-desc">წვენები, გაზიანი სასმელები, წყალი, ენერგეტიკული სასმელები, ჩაი და ყავა</p>
+                <span class="cat-hero-count">120+ პროდუქტი</span>
+              </div>
+              <div class="page-num">03</div>
+            </div>
+          </div>
+
+          <!-- Page 4: Beverages products -->
+          <div class="page-content">
+            <div class="page-inner page-products">
+              <div class="products-header">
+                <h3>სასმელები</h3>
+                <span class="products-cat-line"></span>
+              </div>
+              <div class="product-grid">
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/beverages.jpg" alt=""></div>
+                  <h4>ნატურალური წვენი 1ლ</h4>
+                  <p class="product-detail">ვაშლი, ფორთოხალი, მულტიხილი</p>
+                  <p class="product-spec">1ლ / 12 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/beverages.jpg" alt=""></div>
+                  <h4>გაზიანი წყალი 0.5ლ</h4>
+                  <p class="product-detail">ნატურალური მინერალური წყალი</p>
+                  <p class="product-spec">0.5ლ / 24 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/beverages.jpg" alt=""></div>
+                  <h4>ენერგეტიკული 250მლ</h4>
+                  <p class="product-detail">კლასიკური, ტროპიკული, ბერი</p>
+                  <p class="product-spec">250მლ / 24 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/beverages.jpg" alt=""></div>
+                  <h4>ცივი ჩაი 1.5ლ</h4>
+                  <p class="product-detail">ლიმონი, ატამი, მწვანე ჩაი</p>
+                  <p class="product-spec">1.5ლ / 6 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/beverages.jpg" alt=""></div>
+                  <h4>გაზიანი სასმელი 2ლ</h4>
+                  <p class="product-detail">კოლა, ლიმონათი, ფორთოხალი</p>
+                  <p class="product-spec">2ლ / 6 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/beverages.jpg" alt=""></div>
+                  <h4>პრემიუმ ყავა 200გ</h4>
+                  <p class="product-detail">არაბიკა, დაფქვილი, ხსნადი</p>
+                  <p class="product-spec">200გ / 12 ცალი შეფუთვაში</p>
+                </div>
+              </div>
+              <div class="page-num">04</div>
+            </div>
+          </div>
+
+          <!-- Page 5: Confectionery hero -->
+          <div class="page-content">
+            <div class="page-inner page-category">
+              <div class="cat-hero-block" style="background: linear-gradient(135deg, #5c1a2a, #331018);">
+                <div class="cat-hero-img"><img src="img/confectionery.jpg" alt="საკონდიტრო"></div>
+                <div class="cat-hero-overlay"></div>
+                <span class="cat-hero-tag">კატეგორია</span>
+                <h2 class="cat-hero-title">საკონდიტრო</h2>
+                <p class="cat-hero-desc">შოკოლადი, კანფეტები, ორცხობილა, ვაფლი, მარმელადი</p>
+                <span class="cat-hero-count">85+ პროდუქტი</span>
+              </div>
+              <div class="page-num">05</div>
+            </div>
+          </div>
+
+          <!-- Page 6: Confectionery products -->
+          <div class="page-content">
+            <div class="page-inner page-products">
+              <div class="products-header">
+                <h3>საკონდიტრო</h3>
+                <span class="products-cat-line"></span>
+              </div>
+              <div class="product-grid">
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/confectionery.jpg" alt=""></div>
+                  <h4>რძიანი შოკოლადი 100გ</h4>
+                  <p class="product-detail">კლასიკური, თხილი, ნუში</p>
+                  <p class="product-spec">100გ / 20 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/confectionery.jpg" alt=""></div>
+                  <h4>ასორტი კანფეტები 300გ</h4>
+                  <p class="product-detail">პრემიუმ საჩუქარი კოლექცია</p>
+                  <p class="product-spec">300გ / 12 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/confectionery.jpg" alt=""></div>
+                  <h4>კარაქიანი ორცხობილა 200გ</h4>
+                  <p class="product-detail">ორიგინალი, შოკოლადი, ქოქოსი</p>
+                  <p class="product-spec">200გ / 24 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/confectionery.jpg" alt=""></div>
+                  <h4>ვაფლის რულეტები 150გ</h4>
+                  <p class="product-detail">ვანილი, შოკოლადი, მარწყვი</p>
+                  <p class="product-spec">150გ / 18 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/confectionery.jpg" alt=""></div>
+                  <h4>ჟელიბონი 250გ</h4>
+                  <p class="product-detail">ხილის არომატების ნარევი</p>
+                  <p class="product-spec">250გ / 12 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/confectionery.jpg" alt=""></div>
+                  <h4>შავი შოკოლადი 70% 80გ</h4>
+                  <p class="product-detail">ერთწარმოშობის, პრემიუმ</p>
+                  <p class="product-spec">80გ / 24 ცალი შეფუთვაში</p>
+                </div>
+              </div>
+              <div class="page-num">06</div>
+            </div>
+          </div>
+
+          <!-- Page 7: Dairy hero -->
+          <div class="page-content">
+            <div class="page-inner page-category">
+              <div class="cat-hero-block" style="background: linear-gradient(135deg, #1a5c3a, #0c3320);">
+                <div class="cat-hero-img"><img src="img/dairy.jpg" alt="რძის პროდუქტები"></div>
+                <div class="cat-hero-overlay"></div>
+                <span class="cat-hero-tag">კატეგორია</span>
+                <h2 class="cat-hero-title">რძის პროდუქტები</h2>
+                <p class="cat-hero-desc">რძე, იოგურტი, ყველი, კარაქი, არაჟანი</p>
+                <span class="cat-hero-count">60+ პროდუქტი</span>
+              </div>
+              <div class="page-num">07</div>
+            </div>
+          </div>
+
+          <!-- Page 8: Dairy products -->
+          <div class="page-content">
+            <div class="page-inner page-products">
+              <div class="products-header">
+                <h3>რძის პროდუქტები</h3>
+                <span class="products-cat-line"></span>
+              </div>
+              <div class="product-grid">
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/dairy.jpg" alt=""></div>
+                  <h4>ახალი რძე 1ლ</h4>
+                  <p class="product-detail">მთლიანი, ნახევრად ცხიმიანი</p>
+                  <p class="product-spec">1ლ / 12 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/dairy.jpg" alt=""></div>
+                  <h4>ბერძნული იოგურტი 400გ</h4>
+                  <p class="product-detail">უცხიმო, მარწყვი, თაფლი</p>
+                  <p class="product-spec">400გ / 6 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/dairy.jpg" alt=""></div>
+                  <h4>ჩედარი ყველი 250გ</h4>
+                  <p class="product-detail">რბილი, მომწიფებული</p>
+                  <p class="product-spec">250გ / 10 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/dairy.jpg" alt=""></div>
+                  <h4>კარაქი 200გ</h4>
+                  <p class="product-detail">უმარილო, პრემიუმ ხარისხი</p>
+                  <p class="product-spec">200გ / 20 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/dairy.jpg" alt=""></div>
+                  <h4>ნაღები 500მლ</h4>
+                  <p class="product-detail">ერთმაგი, ორმაგი, სამზა</p>
+                  <p class="product-spec">500მლ / 12 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/dairy.jpg" alt=""></div>
+                  <h4>ხილიანი იოგურტი 125გ</h4>
+                  <p class="product-detail">6-ცალიანი, არომატების ნარევი</p>
+                  <p class="product-spec">6x125გ / 4 ცალი შეფუთვაში</p>
+                </div>
+              </div>
+              <div class="page-num">08</div>
+            </div>
+          </div>
+
+          <!-- Page 9: Snacks hero -->
+          <div class="page-content">
+            <div class="page-inner page-category">
+              <div class="cat-hero-block" style="background: linear-gradient(135deg, #5c4a1a, #332a0c);">
+                <div class="cat-hero-img"><img src="img/snacks.jpg" alt="სნეკები"></div>
+                <div class="cat-hero-overlay"></div>
+                <span class="cat-hero-tag">კატეგორია</span>
+                <h2 class="cat-hero-title">სნეკები და ჩიფსები</h2>
+                <p class="cat-hero-desc">ჩიფსები, თხილეული, ხმელი ხილი, კრეკერები, პოპკორნი</p>
+                <span class="cat-hero-count">75+ პროდუქტი</span>
+              </div>
+              <div class="page-num">09</div>
+            </div>
+          </div>
+
+          <!-- Page 10: Snacks products -->
+          <div class="page-content">
+            <div class="page-inner page-products">
+              <div class="products-header">
+                <h3>სნეკები და ჩიფსები</h3>
+                <span class="products-cat-line"></span>
+              </div>
+              <div class="product-grid">
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/snacks.jpg" alt=""></div>
+                  <h4>ჩიფსები 150გ</h4>
+                  <p class="product-detail">კლასიკური, BBQ, არაჟანი</p>
+                  <p class="product-spec">150გ / 12 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/snacks.jpg" alt=""></div>
+                  <h4>ნარევი თხილეული 200გ</h4>
+                  <p class="product-detail">შემწვარი და დამარილებული</p>
+                  <p class="product-spec">200გ / 12 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/snacks.jpg" alt=""></div>
+                  <h4>ხმელი ხილის ნარევი 180გ</h4>
+                  <p class="product-detail">გარგარი, ქიშმიში, მოცვი</p>
+                  <p class="product-spec">180გ / 12 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/snacks.jpg" alt=""></div>
+                  <h4>ბრინჯის კრეკერი 100გ</h4>
+                  <p class="product-detail">ზღვის მარილი, ვასაბი</p>
+                  <p class="product-spec">100გ / 24 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/snacks.jpg" alt=""></div>
+                  <h4>პოპკორნი 3 ცალიანი</h4>
+                  <p class="product-detail">კარაქი, კარამელი, ნატურალური</p>
+                  <p class="product-spec">3x90გ / 8 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/snacks.jpg" alt=""></div>
+                  <h4>მარილიანი ბრეცელი 200გ</h4>
+                  <p class="product-detail">კლასიკური მარილიანი</p>
+                  <p class="product-spec">200გ / 18 ცალი შეფუთვაში</p>
+                </div>
+              </div>
+              <div class="page-num">10</div>
+            </div>
+          </div>
+
+          <!-- Page 11: Frozen hero -->
+          <div class="page-content">
+            <div class="page-inner page-category">
+              <div class="cat-hero-block" style="background: linear-gradient(135deg, #1a3f5c, #0c2233);">
+                <div class="cat-hero-img"><img src="img/frozen.jpg" alt="გაყინული"></div>
+                <div class="cat-hero-overlay"></div>
+                <span class="cat-hero-tag">კატეგორია</span>
+                <h2 class="cat-hero-title">გაყინული პროდუქტები</h2>
+                <p class="cat-hero-desc">ნაყინი, გაყინული ბოსტნეული, ნახევარფაბრიკატები</p>
+                <span class="cat-hero-count">45+ პროდუქტი</span>
+              </div>
+              <div class="page-num">11</div>
+            </div>
+          </div>
+
+          <!-- Page 12: Frozen products -->
+          <div class="page-content">
+            <div class="page-inner page-products">
+              <div class="products-header">
+                <h3>გაყინული პროდუქტები</h3>
+                <span class="products-cat-line"></span>
+              </div>
+              <div class="product-grid">
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/frozen.jpg" alt=""></div>
+                  <h4>ვანილის ნაყინი 500მლ</h4>
+                  <p class="product-detail">პრემიუმ, შოკოლადი, მარწყვი</p>
+                  <p class="product-spec">500მლ / 8 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/frozen.jpg" alt=""></div>
+                  <h4>გაყინული ბარდა 1კგ</h4>
+                  <p class="product-detail">ბაღის ახალი, სწრაფი გაყინვა</p>
+                  <p class="product-spec">1კგ / 10 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/frozen.jpg" alt=""></div>
+                  <h4>თევზის ჩხირები 300გ</h4>
+                  <p class="product-detail">პანირებული ვირთხა ფილე</p>
+                  <p class="product-spec">300გ / 12 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/frozen.jpg" alt=""></div>
+                  <h4>გაყინული პიცა 350გ</h4>
+                  <p class="product-detail">მარგარიტა, პეპერონი</p>
+                  <p class="product-spec">350გ / 8 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/frozen.jpg" alt=""></div>
+                  <h4>ბოსტნეულის ნარევი 750გ</h4>
+                  <p class="product-detail">სტირ-ფრაი ნარევი, პრემიუმ</p>
+                  <p class="product-spec">750გ / 10 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/frozen.jpg" alt=""></div>
+                  <h4>ნაყინის ბატონები 6ცალი</h4>
+                  <p class="product-detail">შოკოლადით მოლესილი, ვანილი</p>
+                  <p class="product-spec">6x80მლ / 8 ცალი შეფუთვაში</p>
+                </div>
+              </div>
+              <div class="page-num">12</div>
+            </div>
+          </div>
+
+          <!-- Page 13: Household hero -->
+          <div class="page-content">
+            <div class="page-inner page-category">
+              <div class="cat-hero-block" style="background: linear-gradient(135deg, #3a1a5c, #200c33);">
+                <div class="cat-hero-img"><img src="img/household.jpg" alt="საყოფაცხოვრებო"></div>
+                <div class="cat-hero-overlay"></div>
+                <span class="cat-hero-tag">კატეგორია</span>
+                <h2 class="cat-hero-title">საყოფაცხოვრებო</h2>
+                <p class="cat-hero-desc">სარეცხი საშუალებები, სარეცხი ფხვნილი, პირადი მოვლა, ჰიგიენა</p>
+                <span class="cat-hero-count">90+ პროდუქტი</span>
+              </div>
+              <div class="page-num">13</div>
+            </div>
+          </div>
+
+          <!-- Page 14: Household products -->
+          <div class="page-content">
+            <div class="page-inner page-products">
+              <div class="products-header">
+                <h3>საყოფაცხოვრებო</h3>
+                <span class="products-cat-line"></span>
+              </div>
+              <div class="product-grid">
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/household.jpg" alt=""></div>
+                  <h4>ჭურჭლის საშუალება 750მლ</h4>
+                  <p class="product-detail">ლიმონი, ორიგინალი, ალოე</p>
+                  <p class="product-spec">750მლ / 12 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/household.jpg" alt=""></div>
+                  <h4>სარეცხი ფხვნილი 3კგ</h4>
+                  <p class="product-detail">ფხვნილი, სუფთა სურნელი</p>
+                  <p class="product-spec">3კგ / 4 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/household.jpg" alt=""></div>
+                  <h4>უნივერსალური საწმენდი 1ლ</h4>
+                  <p class="product-detail">სპრეი, ანტიბაქტერიული</p>
+                  <p class="product-spec">1ლ / 12 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/household.jpg" alt=""></div>
+                  <h4>შამპუნი 400მლ</h4>
+                  <p class="product-detail">ნორმალური, ცხიმიანი, მშრალი</p>
+                  <p class="product-spec">400მლ / 12 ცალი შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/household.jpg" alt=""></div>
+                  <h4>ტუალეტის ქაღალდი 12ცალი</h4>
+                  <p class="product-detail">3 ფენიანი, რბილი პრემიუმ</p>
+                  <p class="product-spec">12 რულონი / 4 შეფუთვაში</p>
+                </div>
+                <div class="product-item">
+                  <div class="product-img-placeholder"><img src="img/household.jpg" alt=""></div>
+                  <h4>ხელის საპონი 300მლ</h4>
+                  <p class="product-detail">ანტიბაქტერიული, დამატენიანებელი</p>
+                  <p class="product-spec">300მლ / 12 ცალი შეფუთვაში</p>
+                </div>
+              </div>
+              <div class="page-num">14</div>
+            </div>
+          </div>
+
+          <!-- Page 15: Contact info -->
+          <div class="page-content">
+            <div class="page-inner page-contact-info">
+              <h2 class="page-heading">საკონტაქტო ინფორმაცია</h2>
+              <div class="contact-block">
+                <div class="contact-row">
+                  <div class="contact-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </div>
+                  <div>
+                    <h4>მთავარი ოფისი</h4>
+                    <p>თბილისი, საქართველო</p>
+                  </div>
+                </div>
+                <div class="contact-row">
+                  <div class="contact-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  </div>
+                  <div>
+                    <h4>ტელეფონი</h4>
+                    <p>+995 XXX XXX XXX</p>
+                  </div>
+                </div>
+                <div class="contact-row">
+                  <div class="contact-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  </div>
+                  <div>
+                    <h4>ელ. ფოსტა</h4>
+                    <p>info@olimpi.ge</p>
+                  </div>
+                </div>
+                <div class="contact-row">
+                  <div class="contact-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  </div>
+                  <div>
+                    <h4>ვებსაიტი</h4>
+                    <p>www.olimpi.ge</p>
+                  </div>
+                </div>
+              </div>
+              <div class="contact-socials">
+                <span>გამოგვყევით:</span>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
+              </div>
+              <div class="page-num">15</div>
+            </div>
+          </div>
+
+          <!-- Page 16: Back cover -->
+          <div class="page-content">
+            <div class="page-inner cover-back">
+              <div class="cover-accent"></div>
+              <div class="cover-content">
+                <h2 class="cover-back-title">OLIMPI</h2>
+                <div class="cover-line"></div>
+                <p class="cover-back-tagline">თქვენი სანდო სადისტრიბუციო პარტნიორი.</p>
+                <p class="cover-back-copy">&copy; 2026 OLIMPI. ყველა უფლება დაცულია.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Page side arrows -->
+        <button class="page-arrow page-arrow--left" id="arrowLeft">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="page-arrow page-arrow--right" id="arrowRight">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Thumbnails -->
+    <div class="catalog-thumbs" id="catalogThumbs"></div>
+  </section>
+
+  <script src="https://unpkg.com/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+  <script src="js/catalog.js"></script>
+</body>
+</html>
