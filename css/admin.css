@@ -5,12 +5,12 @@
 :root {
   --sidebar-bg: #1e2328;
   --sidebar-hover: #282d33;
-  --sidebar-active: #b8860b;
+  --sidebar-active: #e50004;
   --content-bg: #f5f6fa;
   --card-bg: #fff;
-  --accent: #b8860b;
-  --accent-hover: #9a7209;
-  --accent-light: rgba(184, 134, 11, 0.1);
+  --accent: #e50004;
+  --accent-hover: #c40004;
+  --accent-light: rgba(229, 0, 4, 0.1);
   --text: #333;
   --text-mid: #666;
   --text-light: #999;
@@ -457,8 +457,8 @@ img { max-width: 100%; display: block; }
 .stat-card__icon--blue svg { stroke: #1565c0; }
 .stat-card__icon--green { background: #e8f5e9; color: #2e7d32; }
 .stat-card__icon--green svg { stroke: #2e7d32; }
-.stat-card__icon--gold { background: #fff8e1; color: #b8860b; }
-.stat-card__icon--gold svg { stroke: #b8860b; }
+.stat-card__icon--gold { background: #fff3e0; color: #fd7e14; }
+.stat-card__icon--gold svg { stroke: #fd7e14; }
 .stat-card__icon--red { background: #fce4ec; color: #c62828; }
 .stat-card__icon--red svg { stroke: #c62828; }
 .stat-card__num {
@@ -813,6 +813,67 @@ img { max-width: 100%; display: block; }
   background: #fff;
 }
 .form-group textarea { resize: vertical; }
+
+/* Image upload component */
+.img-upload {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.img-upload__preview {
+  width: 120px;
+  height: 90px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: 2px dashed var(--border);
+  background: var(--content-bg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.img-upload__preview:hover {
+  border-color: var(--accent);
+}
+.img-upload__preview span {
+  font-size: 11px;
+  color: var(--text-light);
+  text-align: center;
+  padding: 4px;
+}
+.img-upload__actions {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.img-upload__or {
+  font-size: 11px;
+  color: var(--text-light);
+  text-align: center;
+}
+.btn--sm {
+  padding: 6px 14px;
+  font-size: 12px;
+  border-radius: 6px;
+}
+.btn--upload {
+  background: var(--content-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s;
+}
+.btn--upload:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
 .form-group .error {
   border-color: var(--danger) !important;
 }

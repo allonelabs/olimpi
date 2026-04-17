@@ -3,11 +3,11 @@
    ======================================== */
 
 :root {
-  /* Colors — amber/gold palette */
-  --accent: #b8860b;
-  --accent-hover: #9a7209;
-  --accent-light: #d4a84b;
-  --orange: #d4940a;
+  /* Colors — tazeay.com red/orange palette */
+  --accent: #e50004;
+  --accent-hover: #c40004;
+  --accent-light: #ff3333;
+  --orange: #fd7e14;
   --dark: #2f2f2f;
   --footer-bg: #343a40;
   --light-bg: #f8f9fa;
@@ -128,7 +128,7 @@ button, input, textarea, select {
 .btn--primary:hover {
   background: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(184, 134, 11, 0.3);
+  box-shadow: 0 6px 20px rgba(229, 0, 4, 0.3);
 }
 .btn--block {
   width: 100%;

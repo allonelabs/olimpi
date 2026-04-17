@@ -200,6 +200,73 @@
     $('#modalOverlay').style.display = 'none';
     document.body.style.overflow = '';
   }
+  // ───────────────────────────────────────
+  // IMAGE UPLOAD HELPER
+  // ───────────────────────────────────────
+  // Returns HTML for a file upload + URL fallback field
+  function imageFieldHTML(id, currentValue) {
+    currentValue = currentValue || '';
+    return '' +
+      '<div class="form-group img-upload-group">' +
+        '<label>სურათი</label>' +
+        '<div class="img-upload">' +
+          '<div class="img-upload__preview" id="' + id + 'Preview"' +
+            (currentValue ? ' style="background-image:url(\'' + esc(currentValue) + '\')"' : '') + '>' +
+            (currentValue ? '' : '<span>სურათის ატვირთვა</span>') +
+          '</div>' +
+          '<div class="img-upload__actions">' +
+            '<label class="btn btn--sm btn--upload" for="' + id + 'File">ფაილიდან ატვირთვა</label>' +
+            '<input type="file" id="' + id + 'File" accept="image/*" style="display:none">' +
+            '<div class="img-upload__or">ან</div>' +
+            '<input type="text" id="' + id + '" placeholder="ჩასვით URL ბმული" value="' + esc(currentValue) + '">' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+  }
+
+  // Wire up file input to convert to base64 and set the hidden URL field + preview
+  function wireImageUpload(id) {
+    var fileInput = $('#' + id + 'File');
+    var urlInput = $('#' + id);
+    var preview = $('#' + id + 'Preview');
+    if (!fileInput) return;
+
+    fileInput.addEventListener('change', function () {
+      var file = fileInput.files[0];
+      if (!file) return;
+      // Max 2MB
+      if (file.size > 2 * 1024 * 1024) {
+        toast('ფაილი ძალიან დიდია (მაქს. 2MB)', 'error');
+        return;
+      }
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        var dataUrl = e.target.result;
+        urlInput.value = dataUrl;
+        preview.style.backgroundImage = 'url("' + dataUrl + '")';
+        preview.innerHTML = '';
+      };
+      reader.readAsDataURL(file);
+    });
+
+    // Also update preview when URL is pasted manually
+    urlInput.addEventListener('input', function () {
+      var val = urlInput.value.trim();
+      if (val) {
+        preview.style.backgroundImage = 'url("' + val + '")';
+        preview.innerHTML = '';
+      } else {
+        preview.style.backgroundImage = '';
+        preview.innerHTML = '<span>სურათის ატვირთვა</span>';
+      }
+    });
+
+    // Click on preview also opens file picker
+    preview.addEventListener('click', function () {
+      fileInput.click();
+    });
+  }
+
   $('#modalClose').addEventListener('click', closeModal);
   $('#modalOverlay').addEventListener('click', function (e) {
     if (e.target === this) closeModal();
@@ -418,7 +485,7 @@
       '<div class="form-group"><label>აღწერა</label><textarea id="mProdDesc" rows="2">' + esc(p.description || '') + '</textarea></div>' +
       '<div class="form-group"><label>წონა / მოცულობა</label><input type="text" id="mProdWeight" value="' + esc(p.weight || '') + '"></div>' +
       '<div class="form-group"><label>შეფუთვა (ყუთში)</label><input type="text" id="mProdPkg" value="' + esc(p.packaging || '') + '"></div>' +
-      '<div class="form-group"><label>სურათის URL</label><input type="text" id="mProdImg" value="' + esc(p.image || '') + '"></div>' +
+      imageFieldHTML('mProdImg', p.image) +
       '<div class="form-group"><label>სტატუსი</label><select id="mProdStatus"><option value="active"' + (p.status === 'active' ? ' selected' : '') + '>აქტიური</option><option value="inactive"' + (p.status === 'inactive' ? ' selected' : '') + '>არააქტიური</option></select></div>' +
       '<button class="btn btn--primary btn--full" id="mProdSave">შენახვა</button>';
   }
@@ -426,6 +493,7 @@
   // Add product
   $('#addProductBtn').addEventListener('click', function () {
     openModal('პროდუქტის დამატება', productFormHTML());
+    wireImageUpload('mProdImg');
     $('#mProdSave').addEventListener('click', function () {
       const name = $('#mProdName').value.trim();
       const cat  = $('#mProdCat').value;
@@ -459,6 +527,7 @@
       const p = products.find(x => x.id === id);
       if (!p) return;
       openModal('პროდუქტის რედაქტირება', productFormHTML(p));
+      wireImageUpload('mProdImg');
       $('#mProdSave').addEventListener('click', function () {
         const name = $('#mProdName').value.trim();
         const cat  = $('#mProdCat').value;
@@ -521,12 +590,13 @@
     return '' +
       '<div class="form-group"><label>სახელი *</label><input type="text" id="mCatName" value="' + esc(c.name || '') + '"></div>' +
       '<div class="form-group"><label>აღწერა</label><textarea id="mCatDesc" rows="2">' + esc(c.description || '') + '</textarea></div>' +
-      '<div class="form-group"><label>სურათის URL</label><input type="text" id="mCatImg" value="' + esc(c.image || '') + '"></div>' +
+      imageFieldHTML('mCatImg', c.image) +
       '<button class="btn btn--primary btn--full" id="mCatSave">შენახვა</button>';
   }
 
   $('#addCategoryBtn').addEventListener('click', function () {
     openModal('კატეგორიის დამატება', categoryFormHTML());
+    wireImageUpload('mCatImg');
     $('#mCatSave').addEventListener('click', function () {
       const name = $('#mCatName').value.trim();
       if (!name) { $('#mCatName').classList.add('error'); return; }
@@ -552,6 +622,7 @@
       const c = categories.find(x => x.id === id);
       if (!c) return;
       openModal('კატეგორიის რედაქტირება', categoryFormHTML(c));
+      wireImageUpload('mCatImg');
       $('#mCatSave').addEventListener('click', function () {
         const name = $('#mCatName').value.trim();
         if (!name) { $('#mCatName').classList.add('error'); return; }
@@ -643,12 +714,13 @@
   });
 
   $('#addGalleryBtn').addEventListener('click', function () {
-    openModal('სურათის დამატება', '' +
-      '<div class="form-group"><label>სურათის URL *</label><input type="text" id="mGalUrl"></div>' +
+    openModal('სურათის დამატება',
+      imageFieldHTML('mGalUrl', '') +
       '<div class="form-group"><label>კატეგორია</label><select id="mGalCat"><option value="">აირჩიეთ</option><option value="პროდუქცია">პროდუქცია</option><option value="საწარმო">საწარმო</option><option value="ღონისძიება">ღონისძიება</option><option value="სხვა">სხვა</option></select></div>' +
       '<div class="form-group"><label>წარწერა</label><input type="text" id="mGalCaption"></div>' +
       '<button class="btn btn--primary btn--full" id="mGalSave">დამატება</button>'
     );
+    wireImageUpload('mGalUrl');
     $('#mGalSave').addEventListener('click', function () {
       const url = $('#mGalUrl').value.trim();
       if (!url) { $('#mGalUrl').classList.add('error'); return; }
@@ -710,12 +782,13 @@
       '<div class="form-group"><label>სათაური *</label><input type="text" id="mNewsTitle" value="' + esc(n.title || '') + '"></div>' +
       '<div class="form-group"><label>თარიღი</label><input type="date" id="mNewsDate" value="' + esc(n.date || new Date().toISOString().slice(0, 10)) + '"></div>' +
       '<div class="form-group"><label>შინაარსი</label><textarea id="mNewsContent" rows="5">' + esc(n.content || '') + '</textarea></div>' +
-      '<div class="form-group"><label>სურათის URL</label><input type="text" id="mNewsImg" value="' + esc(n.image || '') + '"></div>' +
+      imageFieldHTML('mNewsImg', n.image) +
       '<button class="btn btn--primary btn--full" id="mNewsSave">შენახვა</button>';
   }
 
   $('#addNewsBtn').addEventListener('click', function () {
     openModal('სიახლის დამატება', newsFormHTML());
+    wireImageUpload('mNewsImg');
     $('#mNewsSave').addEventListener('click', function () {
       const title = $('#mNewsTitle').value.trim();
       if (!title) { $('#mNewsTitle').classList.add('error'); return; }
@@ -742,6 +815,7 @@
       const n = news.find(x => x.id === id);
       if (!n) return;
       openModal('სიახლის რედაქტირება', newsFormHTML(n));
+      wireImageUpload('mNewsImg');
       $('#mNewsSave').addEventListener('click', function () {
         const title = $('#mNewsTitle').value.trim();
         if (!title) { $('#mNewsTitle').classList.add('error'); return; }
@@ -881,12 +955,13 @@
     return '' +
       '<div class="form-group"><label>სახელი *</label><input type="text" id="mPartName" value="' + esc(p.name || '') + '"></div>' +
       '<div class="form-group"><label>აღწერა</label><textarea id="mPartDesc" rows="2">' + esc(p.description || '') + '</textarea></div>' +
-      '<div class="form-group"><label>ლოგოს URL</label><input type="text" id="mPartLogo" value="' + esc(p.logo || '') + '"></div>' +
+      imageFieldHTML('mPartLogo', p.logo) +
       '<button class="btn btn--primary btn--full" id="mPartSave">შენახვა</button>';
   }
 
   $('#addPartnerBtn').addEventListener('click', function () {
     openModal('პარტნიორის დამატება', partnerFormHTML());
+    wireImageUpload('mPartLogo');
     $('#mPartSave').addEventListener('click', function () {
       const name = $('#mPartName').value.trim();
       if (!name) { $('#mPartName').classList.add('error'); return; }
@@ -912,6 +987,7 @@
       const p = partners.find(x => x.id === id);
       if (!p) return;
       openModal('პარტნიორის რედაქტირება', partnerFormHTML(p));
+      wireImageUpload('mPartLogo');
       $('#mPartSave').addEventListener('click', function () {
         const name = $('#mPartName').value.trim();
         if (!name) { $('#mPartName').classList.add('error'); return; }
