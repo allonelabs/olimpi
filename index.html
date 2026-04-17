@@ -6,13 +6,14 @@
   <title>OLIMPI — სადისტრიბუციო კომპანია</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+Georgian:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+Georgian:wght@300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- ==================== HEADER ==================== -->
   <header class="header" id="header">
+    <!-- Top bar -->
     <div class="header__top">
       <div class="container header__top-inner">
         <div class="header__social">
@@ -38,7 +39,10 @@
         </div>
       </div>
     </div>
-    <div class="header__main" id="headerMain">
+  </header>
+
+  <!-- Main nav — outside header so sticky works -->
+  <div class="header__main" id="headerMain">
       <div class="container header__main-inner">
         <a href="index.html" class="logo">OLIMPI</a>
         <nav class="nav" id="nav">
@@ -48,8 +52,11 @@
             <div class="nav__dropdown-menu">
               <a href="#about">კომპანიის შესახებ</a>
               <a href="#facts">ძირითადი ფაქტები</a>
+              <a href="#warehouses">საწყობები</a>
+              <a href="#certifications">სერტიფიკატები</a>
               <a href="#principles">მუშაობის პრინციპები</a>
               <a href="#gallery">გალერეა</a>
+              <a href="#news">სიახლეები</a>
             </div>
           </div>
           <div class="nav__dropdown">
@@ -84,40 +91,24 @@
         </div>
       </div>
     </div>
-  </header>
+  </div>
 
-  <!-- HERO -->
+  <!-- ==================== HERO ==================== -->
   <section class="hero" id="home">
-    <div class="hero__slider" id="heroSlider">
-      <div class="hero__slide hero__slide--active" style="background-image: url('img/hero.jpg');">
-        <div class="hero__overlay"></div>
-        <div class="container hero__slide-content">
-          <p class="hero__tag">OLIMPI — სადისტრიბუციო კომპანია</p>
-          <h1 class="hero__title">საუკეთესო პროდუქტს<br>თქვენს თაროზე მოვიტანთ</h1>
-          <p class="hero__sub">სანდო სადისტრიბუციო პარტნიორი რეგიონის წამყვანი FMCG ბრენდებისთვის</p>
-          <a href="#products" class="btn btn--primary">პროდუქციის ნახვა</a>
-        </div>
-      </div>
-      <div class="hero__slide" style="background-image: url('img/about.jpg');">
-        <div class="hero__overlay"></div>
-        <div class="container hero__slide-content">
-          <p class="hero__tag">500+ პროდუქტი — 50+ ბრენდი</p>
-          <h1 class="hero__title">ნდობაზე აგებული,<br>ეფექტურობით მართული</h1>
-          <p class="hero__sub">საწყობიდან მაღაზიამდე — სწრაფად, საიმედოდ, ყველგან</p>
-          <a href="#about" class="btn btn--primary">ჩვენს შესახებ</a>
-        </div>
-      </div>
+    <div class="hero__bg" style="background-image: url('img/hero.jpg');"></div>
+    <div class="hero__overlay"></div>
+    <div class="container hero__content">
+      <p class="hero__tag">OLIMPI — სადისტრიბუციო კომპანია</p>
+      <h1 class="hero__title">საუკეთესო პროდუქტს<br>თქვენს თაროზე მოვიტანთ</h1>
+      <p class="hero__sub">სანდო სადისტრიბუციო პარტნიორი რეგიონის წამყვანი FMCG ბრენდებისთვის. 500+ პროდუქტი, 50+ ბრენდი — საწყობიდან მაღაზიამდე.</p>
+      <a href="#products" class="btn btn--primary">პროდუქციის ნახვა</a>
     </div>
-    <button class="hero__arrow hero__arrow--left" id="heroPrev">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-    </button>
-    <button class="hero__arrow hero__arrow--right" id="heroNext">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-    <div class="hero__dots" id="heroDots"></div>
+    <div class="hero__scroll">
+      <span></span>
+    </div>
   </section>
 
-  <!-- PRODUCT CATEGORIES -->
+  <!-- ==================== PRODUCT CATEGORIES ==================== -->
   <section class="products" id="products">
     <div class="container">
       <div class="section-header section-header--center">
@@ -128,113 +119,81 @@
 
         <a href="#" class="product-card">
           <div class="product-card__img">
-            <img src="img/beverages.jpg" alt="სასმელები">
+            <img src="img/beverages.jpg" alt="სასმელები" loading="lazy">
             <div class="product-card__overlay">
-              <span class="product-card__more">დეტალურად</span>
+              <h3 class="product-card__name">სასმელები</h3>
+              <span class="product-card__more">დეტალურად &rarr;</span>
             </div>
-          </div>
-          <div class="product-card__body">
-            <h3>სასმელები</h3>
-            <p>წვენები, გაზიანი სასმელები, წყალი, ენერგეტიკული სასმელები, ჩაი და ყავა</p>
-            <span class="product-card__count">120+ პროდუქტი</span>
           </div>
         </a>
 
         <a href="#" class="product-card">
           <div class="product-card__img">
-            <img src="img/confectionery.jpg" alt="საკონდიტრო">
+            <img src="img/confectionery.jpg" alt="საკონდიტრო" loading="lazy">
             <div class="product-card__overlay">
-              <span class="product-card__more">დეტალურად</span>
+              <h3 class="product-card__name">საკონდიტრო</h3>
+              <span class="product-card__more">დეტალურად &rarr;</span>
             </div>
-          </div>
-          <div class="product-card__body">
-            <h3>საკონდიტრო</h3>
-            <p>შოკოლადი, კანფეტები, ორცხობილა, ვაფლი, მარმელადი</p>
-            <span class="product-card__count">85+ პროდუქტი</span>
           </div>
         </a>
 
         <a href="#" class="product-card">
           <div class="product-card__img">
-            <img src="img/dairy.jpg" alt="რძის პროდუქტები">
+            <img src="img/dairy.jpg" alt="რძის პროდუქტები" loading="lazy">
             <div class="product-card__overlay">
-              <span class="product-card__more">დეტალურად</span>
+              <h3 class="product-card__name">რძის პროდუქტები</h3>
+              <span class="product-card__more">დეტალურად &rarr;</span>
             </div>
-          </div>
-          <div class="product-card__body">
-            <h3>რძის პროდუქტები</h3>
-            <p>რძე, იოგურტი, ყველი, კარაქი, არაჟანი</p>
-            <span class="product-card__count">60+ პროდუქტი</span>
           </div>
         </a>
 
         <a href="#" class="product-card">
           <div class="product-card__img">
-            <img src="img/snacks.jpg" alt="სნეკები">
+            <img src="img/snacks.jpg" alt="სნეკები და ჩიფსები" loading="lazy">
             <div class="product-card__overlay">
-              <span class="product-card__more">დეტალურად</span>
+              <h3 class="product-card__name">სნეკები და ჩიფსები</h3>
+              <span class="product-card__more">დეტალურად &rarr;</span>
             </div>
-          </div>
-          <div class="product-card__body">
-            <h3>სნეკები და ჩიფსები</h3>
-            <p>ჩიფსები, თხილეული, ხმელი ხილი, კრეკერები, პოპკორნი</p>
-            <span class="product-card__count">75+ პროდუქტი</span>
           </div>
         </a>
 
         <a href="#" class="product-card">
           <div class="product-card__img">
-            <img src="img/frozen.jpg" alt="გაყინული პროდუქტები">
+            <img src="img/frozen.jpg" alt="გაყინული პროდუქტები" loading="lazy">
             <div class="product-card__overlay">
-              <span class="product-card__more">დეტალურად</span>
+              <h3 class="product-card__name">გაყინული პროდუქტები</h3>
+              <span class="product-card__more">დეტალურად &rarr;</span>
             </div>
-          </div>
-          <div class="product-card__body">
-            <h3>გაყინული პროდუქტები</h3>
-            <p>ნაყინი, გაყინული ბოსტნეული, ნახევარფაბრიკატები</p>
-            <span class="product-card__count">45+ პროდუქტი</span>
           </div>
         </a>
 
         <a href="#" class="product-card">
           <div class="product-card__img">
-            <img src="img/household.jpg" alt="საყოფაცხოვრებო">
+            <img src="img/household.jpg" alt="საყოფაცხოვრებო" loading="lazy">
             <div class="product-card__overlay">
-              <span class="product-card__more">დეტალურად</span>
+              <h3 class="product-card__name">საყოფაცხოვრებო</h3>
+              <span class="product-card__more">დეტალურად &rarr;</span>
             </div>
-          </div>
-          <div class="product-card__body">
-            <h3>საყოფაცხოვრებო</h3>
-            <p>სარეცხი საშუალებები, პირადი მოვლა, ჰიგიენა</p>
-            <span class="product-card__count">90+ პროდუქტი</span>
           </div>
         </a>
 
         <a href="#" class="product-card">
           <div class="product-card__img">
-            <img src="img/baby.jpg" alt="ბავშვის პროდუქტები">
+            <img src="img/baby.jpg" alt="ბავშვის პროდუქტები" loading="lazy">
             <div class="product-card__overlay">
-              <span class="product-card__more">დეტალურად</span>
+              <h3 class="product-card__name">ბავშვის პროდუქტები</h3>
+              <span class="product-card__more">დეტალურად &rarr;</span>
             </div>
-          </div>
-          <div class="product-card__body">
-            <h3>ბავშვის პროდუქტები</h3>
-            <p>ბავშვის საკვები, საფენები, ნარევი, მოვლის საშუალებები</p>
-            <span class="product-card__count">40+ პროდუქტი</span>
           </div>
         </a>
 
         <a href="#" class="product-card">
           <div class="product-card__img">
-            <img src="img/canned.jpg" alt="კონსერვები">
+            <img src="img/canned.jpg" alt="კონსერვები და მშრალი პროდუქტები" loading="lazy">
             <div class="product-card__overlay">
-              <span class="product-card__more">დეტალურად</span>
+              <h3 class="product-card__name">კონსერვები და მშრალი პროდუქტები</h3>
+              <span class="product-card__more">დეტალურად &rarr;</span>
             </div>
-          </div>
-          <div class="product-card__body">
-            <h3>კონსერვები და მშრალი პროდუქტები</h3>
-            <p>კონსერვები, მაკარონი, ბურღული, სოუსები, ზეთი</p>
-            <span class="product-card__count">95+ პროდუქტი</span>
           </div>
         </a>
 
@@ -242,26 +201,25 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- ==================== ABOUT COMPANY ==================== -->
   <section class="about" id="about">
     <div class="container">
       <div class="about__layout">
         <div class="about__image">
-          <img src="img/hero.jpg" alt="OLIMPI საწყობი">
+          <img src="img/about.jpg" alt="OLIMPI კომპანია" loading="lazy">
         </div>
         <div class="about__content">
           <p class="section-tag">კომპანიის შესახებ</p>
           <h2 class="section-title">ჩვენს შესახებ</h2>
-          <p>OLIMPI არის ერთ-ერთი წამყვანი სადისტრიბუციო კომპანია, რომელიც სპეციალიზირებულია სწრაფად მოხმარებადი სამომხმარებლო საქონლის მიწოდებაში და ანაწილებს დაახლოებით 500 სახეობის პროდუქციას.</p>
-          <p>ჩვენ ვაკავშირებთ მწარმოებლებს საცალო მოვაჭრეებთან და უზრუნველვყოფთ პროდუქციის სწრაფ, უსაფრთხო და მასშტაბურ მიწოდებას. თანამედროვე ავტოპარკით, ტემპერატურულად კონტროლირებადი საწყობებით და თავდადებული ლოჯისტიკური ქსელით, ჩვენ ვემსახურებით როგორც კრიტიკული რგოლი წარმოებასა და მომხმარებელს შორის.</p>
-          <p>კომპანიის საქმიანობა სერტიფიცირებულია <strong>ISO 9001:2015</strong> და <strong>ISO 22000:2018</strong> სტანდარტების შესაბამისად.</p>
+          <p>OLIMPI არის ერთ-ერთი წამყვანი სადისტრიბუციო კომპანია საქართველოში, რომელიც სპეციალიზირებულია სწრაფად მოხმარებადი სამომხმარებლო საქონლის (FMCG) მიწოდებაში. კომპანია ანაწილებს დაახლოებით 500 სახეობის პროდუქციას 50-ზე მეტი საერთაშორისო და ადგილობრივი ბრენდიდან.</p>
+          <p>ჩვენ ვაკავშირებთ მწარმოებლებს საცალო მოვაჭრეებთან და უზრუნველვყოფთ პროდუქციის სწრაფ, უსაფრთხო და მასშტაბურ მიწოდებას. კომპანიის საქმიანობა სერტიფიცირებულია <strong>ISO 9001:2015</strong> და <strong>ISO 22000:2018</strong> სტანდარტების შესაბამისად.</p>
           <a href="#facts" class="btn btn--primary">დეტალურად</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- KEY FACTS -->
+  <!-- ==================== KEY FACTS ==================== -->
   <section class="facts" id="facts">
     <div class="container">
       <div class="section-header section-header--center">
@@ -275,33 +233,71 @@
           </div>
           <span class="fact-card__num" data-target="500">0</span>
           <p class="fact-card__label">სახეობის პროდუქტი</p>
+          <a href="#products" class="fact-card__link">დეტალურად &rarr;</a>
         </div>
         <div class="fact-card">
           <div class="fact-card__icon">
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
           </div>
-          <span class="fact-card__num" data-target="50">0</span>
+          <span class="fact-card__num" data-target="50" data-suffix="+">0</span>
           <p class="fact-card__label">პარტნიორი ბრენდი</p>
+          <a href="#about" class="fact-card__link">დეტალურად &rarr;</a>
         </div>
         <div class="fact-card">
           <div class="fact-card__icon">
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <span class="fact-card__num">ISO</span>
+          <span class="fact-card__num fact-card__num--iso">ISO</span>
           <p class="fact-card__label">სერტიფიკატები</p>
+          <a href="#certifications" class="fact-card__link">დეტალურად &rarr;</a>
         </div>
         <div class="fact-card">
           <div class="fact-card__icon">
             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <span class="fact-card__num" data-target="150">0</span>
+          <span class="fact-card__num" data-target="150" data-suffix="+">0</span>
           <p class="fact-card__label">თანამშრომელი</p>
+          <a href="#about" class="fact-card__link">დეტალურად &rarr;</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PRINCIPLES -->
+  <!-- ==================== WAREHOUSES / LOGISTICS ==================== -->
+  <section class="sub-about" id="warehouses">
+    <div class="container">
+      <div class="sub-about__layout">
+        <div class="sub-about__icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div class="sub-about__content">
+          <p class="section-tag">ლოჯისტიკა და საწყობები</p>
+          <h3 class="sub-about__title">თანამედროვე ავტოპარკი და საწყობები</h3>
+          <p>OLIMPI ფლობს თანამედროვე ავტოპარკს და ტემპერატურულად კონტროლირებად საწყობებს, რომლებიც უზრუნველყოფს პროდუქციის სრული შენახვის ჯაჭვის ხარისხის დაცვას. ჩვენი ლოჯისტიკური ქსელი ფარავს მთელ საქართველოს და უზრუნველყოფს მიწოდებას 98.5% სიზუსტით.</p>
+          <a href="#" class="sub-about__link">დეტალურად &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CERTIFICATIONS ==================== -->
+  <section class="sub-about sub-about--alt" id="certifications">
+    <div class="container">
+      <div class="sub-about__layout">
+        <div class="sub-about__icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <div class="sub-about__content">
+          <p class="section-tag">სერტიფიკატები</p>
+          <h3 class="sub-about__title">ISO სერტიფიცირება</h3>
+          <p>კომპანიის საქმიანობა სერტიფიცირებულია <strong>ISO 9001:2015</strong> (ხარისხის მართვის სისტემა) და <strong>ISO 22000:2018</strong> (სურსათის უსაფრთხოების მართვის სისტემა) საერთაშორისო სტანდარტების შესაბამისად, რაც გარანტიაა პროდუქციის ხარისხისა და უსაფრთხოების.</p>
+          <a href="#" class="sub-about__link">დეტალურად &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WORK PRINCIPLES ==================== -->
   <section class="principles" id="principles">
     <div class="container">
       <div class="section-header section-header--center">
@@ -309,31 +305,31 @@
         <h2 class="section-title">მუშაობის პრინციპები</h2>
       </div>
       <div class="principles__grid">
-        <div class="principle-card">
+        <blockquote class="principle-card">
           <span class="principle-card__num">01</span>
-          <h3>ხარისხის კონტროლი</h3>
+          <h3 class="principle-card__title">ხარისხის კონტროლი</h3>
           <p>ჩვენ ვთანამშრომლობთ მხოლოდ სერტიფიცირებულ მწარმოებლებთან და ვუზრუნველყოფთ პროდუქციის ხარისხის მუდმივ მონიტორინგს მთელი მიწოდების ჯაჭვის მანძილზე.</p>
-        </div>
-        <div class="principle-card">
+        </blockquote>
+        <blockquote class="principle-card">
           <span class="principle-card__num">02</span>
-          <h3>მომხმარებელზე ორიენტირება</h3>
+          <h3 class="principle-card__title">მომხმარებელზე ორიენტირება</h3>
           <p>ჩვენი გუნდი მუდმივად აანალიზებს ბაზრის მოთხოვნებს და მომხმარებლის უკუკავშირს, რათა შევთავაზოთ ყველაზე მოთხოვნადი და აქტუალური პროდუქცია.</p>
-        </div>
-        <div class="principle-card">
+        </blockquote>
+        <blockquote class="principle-card">
           <span class="principle-card__num">03</span>
-          <h3>ლოჯისტიკური ეფექტურობა</h3>
+          <h3 class="principle-card__title">ლოჯისტიკური ეფექტურობა</h3>
           <p>თანამედროვე ავტოპარკი და ოპტიმიზირებული მარშრუტები უზრუნველყოფს პროდუქციის დროულ მიწოდებას 98.5% სიზუსტით მთელი საქართველოს მასშტაბით.</p>
-        </div>
-        <div class="principle-card">
+        </blockquote>
+        <blockquote class="principle-card">
           <span class="principle-card__num">04</span>
-          <h3>გუნდური მუშაობა</h3>
+          <h3 class="principle-card__title">გუნდური მუშაობა</h3>
           <p>150-ზე მეტი კვალიფიციური თანამშრომელი, კონკურენტული ანაზღაურება და პროფესიული განვითარების შესაძლებლობები — ჩვენი წარმატების საფუძველია ადამიანები.</p>
-        </div>
+        </blockquote>
       </div>
     </div>
   </section>
 
-  <!-- GALLERY -->
+  <!-- ==================== GALLERY ==================== -->
   <section class="gallery" id="gallery">
     <div class="container">
       <div class="section-header section-header--center">
@@ -348,21 +344,55 @@
         <button class="gallery__filter" data-filter="snacks">სნეკები</button>
       </div>
       <div class="gallery__grid">
-        <div class="gallery__item" data-category="beverages"><img src="img/beverages.jpg" alt="სასმელები"></div>
-        <div class="gallery__item" data-category="confectionery"><img src="img/confectionery.jpg" alt="საკონდიტრო"></div>
-        <div class="gallery__item" data-category="dairy"><img src="img/dairy.jpg" alt="რძის პროდუქტები"></div>
-        <div class="gallery__item" data-category="snacks"><img src="img/snacks.jpg" alt="სნეკები"></div>
-        <div class="gallery__item" data-category="beverages"><img src="img/frozen.jpg" alt="გაყინული"></div>
-        <div class="gallery__item" data-category="confectionery"><img src="img/household.jpg" alt="საყოფაცხოვრებო"></div>
-        <div class="gallery__item" data-category="dairy"><img src="img/baby.jpg" alt="ბავშვის"></div>
-        <div class="gallery__item" data-category="snacks"><img src="img/canned.jpg" alt="კონსერვები"></div>
-        <div class="gallery__item" data-category="beverages"><img src="img/about.jpg" alt="საწყობი"></div>
-        <div class="gallery__item" data-category="confectionery"><img src="img/hero.jpg" alt="ლოჯისტიკა"></div>
+        <div class="gallery__item" data-category="beverages"><img src="img/beverages.jpg" alt="სასმელები" loading="lazy"></div>
+        <div class="gallery__item" data-category="confectionery"><img src="img/confectionery.jpg" alt="საკონდიტრო" loading="lazy"></div>
+        <div class="gallery__item" data-category="dairy"><img src="img/dairy.jpg" alt="რძის პროდუქტები" loading="lazy"></div>
+        <div class="gallery__item" data-category="snacks"><img src="img/snacks.jpg" alt="სნეკები" loading="lazy"></div>
+        <div class="gallery__item" data-category="beverages"><img src="img/frozen.jpg" alt="გაყინული პროდუქტები" loading="lazy"></div>
+        <div class="gallery__item" data-category="confectionery"><img src="img/household.jpg" alt="საყოფაცხოვრებო" loading="lazy"></div>
+        <div class="gallery__item" data-category="dairy"><img src="img/baby.jpg" alt="ბავშვის პროდუქტები" loading="lazy"></div>
+        <div class="gallery__item" data-category="snacks"><img src="img/canned.jpg" alt="კონსერვები" loading="lazy"></div>
+        <div class="gallery__item" data-category="beverages"><img src="img/about.jpg" alt="საწყობი" loading="lazy"></div>
+        <div class="gallery__item" data-category="confectionery"><img src="img/hero.jpg" alt="ლოჯისტიკა" loading="lazy"></div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- ==================== NEWS ==================== -->
+  <section class="news" id="news">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <p class="section-tag">უახლესი ამბები</p>
+        <h2 class="section-title">სიახლეები</h2>
+      </div>
+      <div class="news__grid">
+        <article class="news-card">
+          <div class="news-card__img">
+            <img src="img/about.jpg" alt="სიახლე" loading="lazy">
+          </div>
+          <div class="news-card__body">
+            <time class="news-card__date">15 აპრილი, 2026</time>
+            <h3 class="news-card__title">OLIMPI-მ ახალი საწყობი გახსნა აღმოსავლეთ საქართველოში</h3>
+            <p class="news-card__desc">კომპანიამ გააფართოვა ლოჯისტიკური ქსელი და ახალი თანამედროვე საწყობი ამოქმედა, რომელიც მოემსახურება აღმოსავლეთ საქართველოს რეგიონს.</p>
+            <a href="#" class="news-card__link">დეტალურად &rarr;</a>
+          </div>
+        </article>
+        <article class="news-card">
+          <div class="news-card__img">
+            <img src="img/hero.jpg" alt="სიახლე" loading="lazy">
+          </div>
+          <div class="news-card__body">
+            <time class="news-card__date">02 მარტი, 2026</time>
+            <h3 class="news-card__title">ISO 22000:2018 სერტიფიკატის განახლება</h3>
+            <p class="news-card__desc">OLIMPI-მ წარმატებით გაიარა საერთაშორისო აუდიტი და განაახლა სურსათის უსაფრთხოების მართვის სისტემის სერტიფიკატი.</p>
+            <a href="#" class="news-card__link">დეტალურად &rarr;</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
   <section class="contact" id="contact">
     <div class="container">
       <div class="section-header section-header--center">
@@ -375,22 +405,30 @@
             <div class="contact__info-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
-            <h4>მისამართი</h4>
-            <p>თბილისი, საქართველო</p>
+            <div>
+              <h4>მისამართი</h4>
+              <p>თბილისი, საქართველო</p>
+            </div>
           </div>
           <div class="contact__info-card">
             <div class="contact__info-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </div>
-            <h4>ტელეფონი</h4>
-            <p>+995 XXX XXX XXX</p>
+            <div>
+              <h4>ტელეფონი</h4>
+              <p>გაყიდვების დეპარტამენტი: +995 XXX XXX XXX</p>
+              <p>ლოჯისტიკა: +995 XXX XXX XXX</p>
+              <p>ზოგადი: +995 XXX XXX XXX</p>
+            </div>
           </div>
           <div class="contact__info-card">
             <div class="contact__info-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </div>
-            <h4>ელ. ფოსტა</h4>
-            <p>info@olimpi.ge</p>
+            <div>
+              <h4>ელ. ფოსტა</h4>
+              <p>info@olimpi.ge</p>
+            </div>
           </div>
         </div>
         <form class="contact__form" id="contactForm">
@@ -411,13 +449,13 @@
           <div class="form-group">
             <textarea name="message" rows="5" placeholder="შეტყობინება" required></textarea>
           </div>
-          <button type="submit" class="btn btn--primary">გაგზავნა</button>
+          <button type="submit" class="btn btn--primary btn--block">გაგზავნა</button>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ==================== FOOTER ==================== -->
   <footer class="footer">
     <div class="container">
       <div class="footer__grid">
@@ -441,17 +479,9 @@
           <a href="#home">მთავარი</a>
           <a href="#about">ჩვენს შესახებ</a>
           <a href="#products">პროდუქცია</a>
+          <a href="#gallery">გალერეა</a>
           <a href="catalog.html">ე-კატალოგი</a>
           <a href="#contact">კონტაქტი</a>
-        </div>
-        <div class="footer__col">
-          <h4>პროდუქცია</h4>
-          <a href="#">სასმელები</a>
-          <a href="#">საკონდიტრო</a>
-          <a href="#">რძის პროდუქტები</a>
-          <a href="#">სნეკები და ჩიფსები</a>
-          <a href="#">გაყინული პროდუქტები</a>
-          <a href="#">საყოფაცხოვრებო</a>
         </div>
         <div class="footer__col">
           <h4>კონტაქტი</h4>
