@@ -86,8 +86,62 @@
     }
   }
 
+  // ========================================
+  // PAGE TURN SOUND — synthesized paper swoosh
+  // ========================================
+  let audioCtx = null;
+  let soundEnabled = true;
+
+  function playPageTurnSound() {
+    if (!soundEnabled) return;
+
+    // Lazy-init AudioContext (needs user gesture)
+    if (!audioCtx) {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+
+    const now = audioCtx.currentTime;
+    const duration = 0.35;
+
+    // White noise buffer for paper rustle
+    const bufferSize = audioCtx.sampleRate * duration;
+    const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+    const data = noiseBuffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) {
+      data[i] = (Math.random() * 2 - 1) * 0.4;
+    }
+
+    const noise = audioCtx.createBufferSource();
+    noise.buffer = noiseBuffer;
+
+    // Bandpass filter — makes noise sound like paper, not static
+    const filter = audioCtx.createBiquadFilter();
+    filter.type = 'bandpass';
+    filter.frequency.setValueAtTime(3000, now);
+    filter.frequency.exponentialRampToValueAtTime(800, now + duration);
+    filter.Q.value = 0.8;
+
+    // Volume envelope — quick attack, fast decay
+    const gain = audioCtx.createGain();
+    gain.gain.setValueAtTime(0, now);
+    gain.gain.linearRampToValueAtTime(0.15, now + 0.03);
+    gain.gain.linearRampToValueAtTime(0.08, now + 0.12);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+
+    noise.connect(filter);
+    filter.connect(gain);
+    gain.connect(audioCtx.destination);
+
+    noise.start(now);
+    noise.stop(now + duration);
+  }
+
   // Listen for page flip events
   pageFlip.on('flip', function (e) {
+    playPageTurnSound();
     updatePageIndicator();
     updateBookPosition();
   });
@@ -191,6 +245,14 @@
 
   document.getElementById('btnFirst').addEventListener('click', goToFirst);
   document.getElementById('btnLast').addEventListener('click', goToLast);
+
+  // Sound toggle
+  var btnSound = document.getElementById('btnSound');
+  btnSound.addEventListener('click', function () {
+    soundEnabled = !soundEnabled;
+    btnSound.classList.toggle('active', soundEnabled);
+    btnSound.title = soundEnabled ? 'ხმა ჩართულია' : 'ხმა გამორთულია';
+  });
 
   // Zoom
   document.getElementById('btnZoomIn').addEventListener('click', function () {
